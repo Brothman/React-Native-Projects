@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Switch } from 'react-native';
+import SwitchToDo from './SwitchToDo';
 
 export default class ToDoList extends Component {
   constructor(props) {
@@ -10,23 +11,17 @@ export default class ToDoList extends Component {
 
   render() {
 
-      const rows = [
-          { id: 0, text: "View"},
-          { id: 1, text: 'Text' },
-          { id: 2, text: 'Image' },
-      ];
-
-      const extractKey = ({ id }) => id;
+      const extractKey = ({ id }) => id.toString();
 
       const renderItem = ({ item }) => {
           return (
-              <Text> {item.text} </Text>
+              <SwitchToDo text={item.text} />
           );
       };
 
     return (
       <FlatList
-        data={rows}
+        data={this.props.todos}
         renderItem={renderItem}
         keyExtractor={extractKey}
       />

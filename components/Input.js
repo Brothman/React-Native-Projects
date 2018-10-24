@@ -13,6 +13,7 @@ export default class Input extends Component {
 
   handleSubmit() {
     //   console.log(this.state.text);
+    this.props.updateToDos(this.state.text);
     this.setState({text: ""});
   }
 
