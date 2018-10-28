@@ -5,15 +5,14 @@ export default class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        text: ""
+        text: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
-    //   console.log(this.state.text);
-    this.props.updateToDos(this.state.text);
+    this.props.addToDos(this.state.text);
     this.setState({text: ""});
   }
 

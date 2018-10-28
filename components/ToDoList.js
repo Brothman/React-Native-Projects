@@ -15,13 +15,14 @@ export default class ToDoList extends Component {
 
       const renderItem = ({ item }) => {
           return (
-              <SwitchToDo text={item.text} />
+              <SwitchToDo id={item.id} text={item.text} checked={item.checked} updateChecked={this.props.updateChecked}/>
           );
       };
 
     return (
       <FlatList
         data={this.props.todos}
+        extraData={this.props}
         renderItem={renderItem}
         keyExtractor={extractKey}
       />

@@ -7,6 +7,7 @@ export default class SwitchToDo extends Component {
     super(props);
     this.state = {
         checked: false,
+        deleted: false,
     };
     this.checkBox = this.checkBox.bind(this);
   }
@@ -15,14 +16,20 @@ export default class SwitchToDo extends Component {
         this.setState({ checked: !this.state.checked }, () => console.log(this.state.checked));
     }
 
+
   render() {
+      const deleted = this.state.deleted;
     return (
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: Dimensions.get('window').width }}>
-            <Text style={{paddingLeft: 23}}> {this.props.text} </Text>
-            <Switch style ={{marginRight: 23}}
-                onValueChange={(value) => this.checkBox(value)}
-                value={this.state.checked}
-            />
+        <View>
+            { deleted ? null : 
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: Dimensions.get('window').width }}>
+                        <Text style={{paddingLeft: 23}}> {this.props.text} </Text>
+                        <Switch style ={{marginRight: 23}}
+                            onValueChange={() => this.props.updateChecked(this.props.id)}
+                            value={this.props.checked}
+                        />
+                    </View>
+            }
         </View>
     );
   }
