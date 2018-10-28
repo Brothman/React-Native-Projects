@@ -16,8 +16,9 @@ export class TodoProvider extends React.Component {
 
     updateToDos(text) {
         const id = this.state.todos.length;
-        const todos = Array.from(this.state.todos)
-        todos.push({ id, text });
+        const todos = Array.from(this.state.todos);
+        const completed = false;
+        todos.push({ id, text, completed });
         this.setState({ todos });
     }
 

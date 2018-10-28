@@ -12,8 +12,14 @@ export default class Title extends Component {
 
   render() {
     return (
-        <View style={{backgroundColor: Colors.babyBlue, width: '100%', minHeight: 50, justifyContent: 'center'}}>
-          <Text style={{ color: 'black', textAlign: 'center', fontSize: 28 }}>  You Do </Text>
+        <View style={{backgroundColor: Colors.babyBlue, 
+                      width: '100%', 
+                      minHeight: 50, 
+                      justifyContent: 'center'}}>
+          <Text style={{ color: 'black', 
+                          textAlign: 'center', 
+                          fontSize: 36,
+                          fontFamily: 'Georgia' }}>  You Do </Text>
         </View>
     );
   }

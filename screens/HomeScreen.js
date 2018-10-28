@@ -18,13 +18,13 @@ export default class HomeScreen extends Component {
                { id: 2, text: 'Image', checked: false  },
       ],
     };
-    this.addToDos = this.addToDos.bind(this);
   }
 
-  addToDos(text) {
+  addToDos = (text) => {
     const id = this.state.todos.length;
     const todos = Array.from(this.state.todos);
-    todos.push({ id, text });
+    const checked = false;
+    todos.push({ id, text, checked });
     this.setState({ todos });
   }
 
@@ -52,7 +52,6 @@ export default class HomeScreen extends Component {
 
         <Input addToDos={this.addToDos}/>
         <ToDoList todos={this.state.todos} updateChecked={id => this.updateChecked(id)}/>
-        <Text> textInComponent </Text>
         <Footer clearCompletedTodos={this.clearCompletedTodos} />
 
       </ScrollView>

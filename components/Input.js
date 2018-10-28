@@ -20,12 +20,12 @@ export default class Input extends Component {
     return (
         <TextInput
             placeholder={"Enter task"}
-            style={{ height: 30, 
+            style={{height: 50, 
                     borderColor: 'gray', 
                     borderBottomWidth: 1,
                     width: '85%', 
                     textAlign: 'center', 
-                    fontSize: 18 }}
+                    fontSize: 30 }}
             onChangeText={(text) => this.setState({ text })}
             onSubmitEditing={() => this.handleSubmit()}
             value={this.state.text}
