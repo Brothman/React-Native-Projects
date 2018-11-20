@@ -54,6 +54,10 @@ I want to add an animation where the todo item fades into oblivion upon deletion
 
 I want to implement a custom checkbox for completed notes, rather than the built in React Native `Switch` Component. 
 
+#### Priorities Screen
+
+I want to implement a priorities screen to list one's daily priorities for my Mom.
+
 #### Add Code Snippets to ReadME
 
 I will add code snippets under the key feature sections.
